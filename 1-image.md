@@ -15,6 +15,7 @@ docker pull <nombre imagen>:<tag>
 
 Descargar la imagen **hello-world**
 # COMPLETAR
+```
 C:\Windows\System32>docker pull hello-world
 Using default tag: latest
 latest: Pulling from library/hello-world
@@ -22,12 +23,13 @@ latest: Pulling from library/hello-world
 Digest: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
 Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
-
+```
 **¿Qué es nginx**
 # COMPLETAR 
-
+Ngix es un software de servidor web de código abieto, de alto rendimiento, que puede ser utilziado como proxy inverso, balanceador de carga, proxy de correo eletrónico y caché HTTP. A diferencia de servidores tradicionales como Apache, que suelen crear un nuevo proceso o hilo por cada conexión, Nginx utiliza una arquitectura asíncrona y orientada a eventos.
 Descargar la imagen  **nginx** en la versión **alpine**
 # COMPLETAR
+```
 C:\Windows\System32>docker pull nginx:alpine
 alpine: Pulling from library/nginx
 cb1ff4086f82: Pull complete
@@ -41,7 +43,7 @@ a992fbc61ecc: Pull complete
 Digest: sha256:42a516af16b852e33b7682d5ef8acbd5d13fe08fecadc7ed98605ba5e3b26ab8
 Status: Downloaded newer image for nginx:alpine
 docker.io/library/nginx:alpine
-
+```
 ### Listar imágenes
 
 ```
@@ -139,10 +141,11 @@ docker rmi <nombre imagen>:<tag>
 
 Eliminar la imagen hello-world 
 # COMPLETAR
+```
 C:\Windows\System32>docker rmi hello-world
 Untagged: hello-world:latest
 Deleted: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
-
+```
 -f: Es la opción para forzar la eliminación de la imagen incluso si hay contenedores en ejecución que utilizan esa imagen.
 Cuando eliminas una imagen Docker, Docker no elimina automáticamente los contenedores que se han creado a partir de esa imagen. Esto significa que, aunque hayas eliminado la imagen, el contenedor seguirá ejecutándose normalmente.  
 **Considerar**
@@ -152,17 +155,18 @@ Es una buena práctica detener y eliminar todos los contenedores que dependan de
 ```
 docker rmi -f <nombre imagen>:<tag>
 ```
+```
 C:\Windows\System32>docker rmi -f hello-world
 Untagged: hello-world:latest
 Deleted: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
-
+```
+```
 C:\Windows\System32>docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 17eec7bbc9d7: Pull complete
 Digest: sha256:54e66cc1dd1fcb1c3c58bd8017914dbed8701e2d8c74d9262e26bd9cc1642d31
 Status: Downloaded newer image for hello-world:latest
-
 Hello from Docker!
 This message shows that your installation appears to be working correctly.
 
@@ -183,3 +187,4 @@ Share images, automate workflows, and more with a free Docker ID:
 
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
+```
