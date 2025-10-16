@@ -6,10 +6,16 @@ docker exec <nombre contenedor> <comando> <argumentos opcionales>
 ```
 # COMPLETAR
 ### ¿Para qué se usa el comando ls?
+El comando ls se utilia paralistar el contenido de un directorio, es decir, mostrar los archivos y carpetas que se encuentran en una ubicación.
 ### ¿Para qué sirve el argumento -l junto al comando ls?
+El argumento -l sirve para mostrar una lista detallada de los archivos y directorios, en lugar de solo sus nombres.
 ### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
 # COMPLETAR
+```
+docker exec jenkins_server ls -l
+```
 # COLOCAR UNA CAPTURA DE PANTALLA
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/be8b6844-4511-4713-af49-9152974ade1f" />
 
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
@@ -44,6 +50,7 @@ Ejecutar
 whoami
 ```
 # COLOCAR UNA CAPTURA DE PANTALLA
+<img width="500" height="100" alt="image" src="https://github.com/user-attachments/assets/0496c111-4a7b-47e0-a1f7-83bb18e08057" />
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando ls.
@@ -60,15 +67,22 @@ docker exec -i-t <nombre contenedor> <programa o comando>
 ```
 docker exec -it <nombre contenedor> <programa o comando>
 ```
-
+```
+docker exec -it jenkins_server whoami
+```
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
 
 # COMPLETAR
+```
+docker exec jenkins_server cat /var/jenkins_home/secrets/initialAdminPassword
+```
+<img width="1919" height="518" alt="image" src="https://github.com/user-attachments/assets/8d25c3e0-d99f-429c-b9ba-eee308b0fad6" />
+
 
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
+<img width="1919" height="518" alt="image" src="https://github.com/user-attachments/assets/709f6288-e052-4f92-9d5c-1e2bf8efdb63" />
 
 **Para este punto no es necesario continuar con la instalación de Jenkins**
-
 
 ### Para ver los logs de un contenedor
 
@@ -76,4 +90,8 @@ docker exec -it <nombre contenedor> <programa o comando>
 docker logs -n <cantidad de líneas> <nombre o id del contenedor> 
 ```
 -t: para incluir la fecha y la hora
+```
+docker logs -n 10 jenkins_server
+```
+<img width="1919" height="331" alt="image" src="https://github.com/user-attachments/assets/7a197838-3455-487e-a9a7-50db2b07b4d7" />
 
